@@ -1,0 +1,54 @@
+<!-- Access data.flats with owner's name as key -->
+<% flat = data.flats[owner] %>
+
+<!-- Inject flat data in template -->
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/<%= flat.city_slug %>');">
+  <div class="banner-content">
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{owner}", class: "img-circle", width: "100px" %>
+    <h1><%= flat.name %></h1>
+    <p>Want to make a trip to <%= flat.city_name %>?</p>
+    <a class="btn btn-primary btn-lg">Book now</a>
+  </div>
+</div>
+
+<div id="flat-description">
+  <div class="container"> 
+    <div class = "row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1"">
+        <h2>About the Flat</h2>
+        <p><%= flat.description %></p>
+        <hr style="border-top: 1px solid #eee;">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <p>Rating: <%= "<i class='fa fa-star' style='color: #ffb400'></i>" * flat.rating %></p>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <p>WiFi? <%= flat.wifi ? "<i class='fa fa-thumbs-up' style='color: #32B796'></i>" : "<i class='fa fa-thumbs-down' style='color: #EE5F5B'></i>" %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="home-flats">
+  <h2 class="text-center">Other flats</h2>
+  <div class="row">
+    <% data.flats.each do |iterated_owner, flat| %>
+      <% unless iterated_owner == owner %>
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), url('https://kitt.lewagon.com/placeholder/cities/<%= flat.city_slug %>');">
+          <div class="card-category"><%= flat.city_name %></div>
+          <div class="card-description">
+            <h3><%= flat.name %></h3>
+            <p><%= flat.description %></p>
+          </div>
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{iterated_owner}", class:"card-user" %>
+          <%= link_to "", "flats/#{owner}.html", class: "card-link" %>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
