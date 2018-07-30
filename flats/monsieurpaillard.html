@@ -6,30 +6,30 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Use the title from a page's frontmatter if it has one -->
-    <title>Le Wagon - Middleman</title>
-    <link href="stylesheets/application-4f21a927.css" rel="stylesheet" />
-    <script src="javascripts/application-93de88c9.js"></script>
-    <link href="images/favicon-f15af148.png" rel="icon" type="image/png" />
+    <title></title>
+    <link href="../stylesheets/application-4f21a927.css" rel="stylesheet" />
+    <script src="../javascripts/application-93de88c9.js"></script>
+    <link href="../images/favicon-f15af148.png" rel="icon" type="image/png" />
   </head>
   <body>
     <div class="navbar-wagon">
   <!-- Logo -->
-  <a href="./" class="navbar-wagon-brand"><img src=images/logo-acc9c0ec.png alt='logo'></a>
+  <a href="../" class="navbar-wagon-brand"><img src=../images/logo-acc9c0ec.png alt='logo'></a>
 
 <!--   <a href="/" class="navbar-wagon-brand">
-    <img src="images/logo-acc9c0ec.png" alt="logo">
+    <img src="images/logo.png" alt="logo">
   </a> -->
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <a href="./" class="navbar-wagon-item navbar-wagon-link">Home</a>
-    <a href="about.html" class="navbar-wagon-item navbar-wagon-link">About</a>
+    <a href="../" class="navbar-wagon-item navbar-wagon-link">Home</a>
+    <a href="../about.html" class="navbar-wagon-item navbar-wagon-link">About</a>
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <img src=images/alex-ccfdcf28.jpg class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+        <img src=../images/alex-ccfdcf28.jpg class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><a href="#">Profile</a></li>
           <li><a href="#">Dashboard</a></li>
@@ -51,28 +51,41 @@
     </div>
   </div>
 </div>   <!-- inject layouts/_navbar.html.erb -->
-    <!-- <div id="home">
-  <div class="home-content">
-    <img src="images/logo-acc9c0ec.png" width="200" alt="Logo" />
-    <p>
-      Middleman is now running!
-    </p>
-    <p class="about">
-      <a href="about.html">More about this template</a>
-    </p>
-  </div>
-</div> -->
+    <!-- Access data.flats with owner's name as key -->
 
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
+<!-- Inject flat data in template -->
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/london');">
   <div class="banner-content">
-    <h1>Le Wagon Berlin</h1>
-    <p>Learn to code with us in Berlin</p>
-    <a class="btn btn-primary btn-lg">Start now</a>
+    <img src="https://kitt.lewagon.com/placeholder/users/monsieurpaillard" class="img-circle" width="100px" alt="Monsieurpaillard" />
+    <h1>Romain's home</h1>
+    <p>Want to make a trip to London, UK?</p>
+    <a class="btn btn-primary btn-lg">Book now</a>
+  </div>
+</div>
+
+<div id="flat-description">
+  <div class="container"> 
+    <div class = "row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1"">
+        <h2>About the Flat</h2>
+        <p>Nice flat in Piccadilly</p>
+        <hr style="border-top: 1px solid #eee;">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <p>Rating: <i class='fa fa-star' style='color: #ffb400'></i><i class='fa fa-star' style='color: #ffb400'></i><i class='fa fa-star' style='color: #ffb400'></i><i class='fa fa-star' style='color: #ffb400'></i><i class='fa fa-star' style='color: #ffb400'></i></p>
+          </div>
+          <div class="col-xs-12 col-sm-6">
+            <p>WiFi? <i class='fa fa-thumbs-up' style='color: #32B796'></i></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
 <div class="container" id="home-flats">
-  <h2 class="text-center">Recent flats</h2>
+  <h2 class="text-center">Other flats</h2>
   <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), url('https://kitt.lewagon.com/placeholder/cities/paris');">
@@ -82,7 +95,7 @@
             <p>Charming room in Montmartre</p>
           </div>
           <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="card-user" alt="Ssaunier" />
-          <a href="flats/ssaunier.html" class="card-link"></a>
+          <a href="flats/monsieurpaillard.html" class="card-link"></a>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4">
@@ -93,17 +106,6 @@
             <p>Small flat in Tokyo</p>
           </div>
           <img src="https://kitt.lewagon.com/placeholder/users/papillard" class="card-user" alt="Papillard" />
-          <a href="flats/papillard.html" class="card-link"></a>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%), url('https://kitt.lewagon.com/placeholder/cities/london');">
-          <div class="card-category">London, UK</div>
-          <div class="card-description">
-            <h3>Romain's home</h3>
-            <p>Nice flat in Piccadilly</p>
-          </div>
-          <img src="https://kitt.lewagon.com/placeholder/users/monsieurpaillard" class="card-user" alt="Monsieurpaillard" />
           <a href="flats/monsieurpaillard.html" class="card-link"></a>
         </div>
       </div>
@@ -115,7 +117,7 @@
             <p>Nice flat in Berlin</p>
           </div>
           <img src="https://kitt.lewagon.com/placeholder/users/ajdubovoy" class="card-user" alt="Ajdubovoy" />
-          <a href="flats/ajdubovoy.html" class="card-link"></a>
+          <a href="flats/monsieurpaillard.html" class="card-link"></a>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4">
@@ -126,7 +128,7 @@
             <p>Nice flat in Berlin</p>
           </div>
           <img src="https://kitt.lewagon.com/placeholder/users/gabriel-horvat" class="card-user" alt="Gabriel horvat" />
-          <a href="flats/gabriel-horvat.html" class="card-link"></a>
+          <a href="flats/monsieurpaillard.html" class="card-link"></a>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4">
@@ -137,12 +139,11 @@
             <p>Nice flat in Berlin</p>
           </div>
           <img src="https://kitt.lewagon.com/placeholder/users/julianschleiminger" class="card-user" alt="Julianschleiminger" />
-          <a href="flats/julianschleiminger.html" class="card-link"></a>
+          <a href="flats/monsieurpaillard.html" class="card-link"></a>
         </div>
       </div>
   </div>
-</div>
-                      <!-- Page content is injected here -->
+</div>                      <!-- Page content is injected here -->
     <div class="footer">
   <div class="footer-links">
     <a href="#"><i class="fa fa-github"></i></a>
